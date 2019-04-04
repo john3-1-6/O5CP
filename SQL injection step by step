@@ -1,6 +1,6 @@
 http://breakthesecurity.cysecurity.org/2010/12/hacking-website-using-sql-injection-step-by-step-guide.html
 Use http://www.asciitable.com/ as an ascii table reference
-Find vulnerable webpage
+Find vulnerable injectable webpage URL
 
 use ' to establish if its vulnerable
 order by 9 to determine the number of columns in the table
