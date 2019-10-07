@@ -1,0 +1,13 @@
+Recon
+Basic
+
+Nmap -vv -T4 -sV -sC -oA nmap.btcp 10.10.10.10
+Nmap -vv -T4 -sV -sC -sU -oA nmap.budp 10.10.10.10
+
+Full
+
+Nmap -vv -T4 -sV -sC -oA nmap.tcp -p 1-65535 10.10.10.10
+Nmap -vv -T4 -sV -sC -sU -oA nmap.udp -p 1-65535 10.10.10.10
+
+Nmap Scripts
+ls /usr/share/nmap/scripts |grep <protocol>
